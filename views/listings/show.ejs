@@ -1,0 +1,39 @@
+
+<h2>Listing Details</h2>
+
+<p>
+  Favourited by 
+  <%= listing.favouritedByUsers.length %> 
+  <%= listing.favouritedByUsers.length === 1 ? 'user' : 'users'  %>.
+</p>
+
+<% if( userHasFavourited ){  %>
+  You have favourited this Listing!
+  <form action="/listings/<%= listing.id %>/favourite?_method=delete" method="post">
+    <button>Remove from Favourites</button>
+  </form>
+<% } else { %>
+  <form action="/listings/<%= listing.id %>/favourite" method="post">
+    <button>Add as Favourite</button>
+  </form>
+<% } %>
+
+<p>
+  <strong>Address:</strong> <%= listing.streetAddress %>
+</p>
+
+<p>
+  <strong>City:</strong> <%= listing.city %>
+</p>
+
+<p>
+  <strong>price:</strong> $AUD<%= listing.price %>
+</p>
+
+<p>
+  <strong>size:</strong> <%= listing.size %>sq.m.
+</p>
+
+<p>
+  <strong>Owner:</strong> <%= listing.owner.username %>
+</p>

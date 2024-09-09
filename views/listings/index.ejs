@@ -1,0 +1,9 @@
+<h2>Listings index</h2>
+
+<ul>
+  <% for( const l of listings ){ %>
+    <li>
+      <a href="/listings/<%= l._id %>"><%= l.streetAddress %>, <%= l.city %></a>
+    </li>
+  <% } %>
+</ul>
