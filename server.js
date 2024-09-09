@@ -14,7 +14,7 @@ const listingsController = require('./controllers/listings.js');
 const isSignedIn = require('./middleware/is-signed-in');
 const passUserToView = require('./middleware/pass-user-to-view');
 
-const port = process.env.PORT ? process.env.PORT : '3000';
+const port = 3000; // process.env.PORT ? process.env.PORT : '3000';
 
 mongoose.connect(process.env.MONGODB_URI);
 
